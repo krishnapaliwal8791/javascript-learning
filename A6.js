@@ -14,13 +14,13 @@
 
 let score = "33";
 
-console.log("Original value:", score);
-console.log("Type before conversion:", typeof score);
+console.log("Original value:", score); // Output = 33
+console.log("Type before conversion:", typeof score); // Output = string
 
-let valueInNumber = Number(score);
+let valueInNumber = Number(score); 
 
-console.log("After conversion:", valueInNumber);
-console.log("Type after conversion:", typeof valueInNumber);
+console.log("After conversion:", valueInNumber); // Output = 33
+console.log("Type after conversion:", typeof valueInNumber); // Output = number
 console.log("\n---------------------------------\n");
 
 /*
@@ -29,8 +29,8 @@ Invalid numeric string
 
 let score2 = "33auie";
 
-console.log("Original value:", score2);
-console.log("Type before conversion:", typeof score2);
+console.log("Original value:", score2); // Output = 33auie
+console.log("Type before conversion:", typeof score2); // Output = string
 
 let valueInNumber2 = Number(score2);
 
@@ -147,6 +147,7 @@ console.log("\n---------------------------------\n");
 --------------------------------------------------------
 */
 
+console.log("NaN == NaN ->",NaN == NaN);
 console.log("NaN === NaN →", NaN === NaN);  // false
 console.log("null == undefined →", null == undefined);   // true
 console.log("null === undefined →", null === undefined); // false
