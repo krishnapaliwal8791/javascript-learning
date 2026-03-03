@@ -36,7 +36,7 @@ let valueInNumber2 = Number(score2);
 
 console.log("After conversion:", valueInNumber2);  // NaN
 console.log("Type after conversion:", typeof valueInNumber2); // number
-console.log("typeof NaN:", typeof NaN);
+console.log("typeof NaN:", typeof NaN); //Output = number
 console.log("\n---------------------------------\n");
 
 
@@ -107,7 +107,7 @@ console.log("1 →", Boolean(num1));
 console.log("22 →", Boolean(num2));
 console.log("-22 →", Boolean(num3));
 console.log("0 →", Boolean(num4));
-console.log("NaN →", Boolean(num5));
+console.log("NaN →", Boolean(num5)); //Output = false
 console.log("\n---------------------------------\n");
 
 
@@ -162,3 +162,74 @@ console.log("=================================\n");
 
 
 // NaN == Nan //false because NaN is only value not equal to itself
+
+
+
+// ==========================================
+// undefined -> boolean
+// ==========================================
+let A; //undefined
+console.log("Value of A before conversion: ",A,"\ntypeof A before conversion: ",typeof A);
+let bool = Boolean(A);
+console.log("Value of A after conversion: ",bool,"\ntypeof A after conversion: ",typeof bool);
+/*
+Output :
+Value of A before conversion:  undefined
+typeof A before conversion:  undefined
+Value of A after conversion:  false
+typeof A after conversion:  boolean
+*/
+console.log("===============================================================================");
+
+
+// ==========================================
+// null -> boolean
+// ==========================================
+let B = null; 
+console.log("Value of B before conversion: ",B,"\ntypeof B before conversion: ",typeof B);
+let boolB = Boolean(B);
+console.log("Value of B after conversion: ",boolB,"\ntypeof B after conversion: ",typeof boolB);
+/*
+Output :
+Value of B before conversion:  null
+typeof B before conversion:  object
+Value of B after conversion:  false
+typeof B after conversion:  boolean
+*/
+console.log("===============================================================================");
+// ==========================================
+// undefined -> string
+// ==========================================
+let C;
+console.log("Value of C before conversion: ",C,"\ntypeof C before conversion: ",typeof C);
+let CConverted = String(C);
+console.log("Value of C after conversion: ",CConverted,"\ntypeof C after conversion: ",typeof CConverted);
+// To prove in CConverted the value is Undefined
+console.log(CConverted+" Hello ");
+/*
+Output:
+Value of C before conversion:  undefined
+typeof C before conversion:  undefined
+Value of C after conversion:  undefined
+typeof C after conversion:  string
+undefined Hello
+*/
+console.log("===============================================================================");
+// ==========================================
+// null -> string
+// ==========================================
+let D = null;
+console.log("Value of D before conversion: ",D,"\ntypeof D before conversion: ",typeof D);
+let DConverted = String(D);
+console.log("Value of D after conversion: ",DConverted,"\ntypeof D after conversion: ",typeof DConverted);
+// To prove in DConverted the value is null
+console.log(DConverted+" Hello ");
+/*
+Output:
+Value of D before conversion:  null
+typeof D before conversion:  object
+Value of D after conversion:  null
+typeof D after conversion:  string
+null Hello
+*/
+console.log("===============================================================================");
