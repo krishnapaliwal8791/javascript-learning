@@ -103,16 +103,27 @@ testVarScope();
 /*
 ========================
 Hoisting Behavior
+Hoisting is JavaScript’s behavior where variable and function declarations are processed and placed in memory before code execution begins.
+
+| Type                   | Hoisted | Initialized       | Access before declaration |
+| ---------------------- | ------- | ----------------- | ------------------------- |
+| `var`                  | Yes     | `undefined`       | Allowed                   |
+| `let`                  | Yes     | Not initialized   | Error                     |
+| `const`                | Yes     | Not initialized   | Error                     |
+| `function declaration` | Yes     | Fully initialized | Allowed                   |
+
 ========================
 */
 
 console.log("var hoisted =", hoistedVar); // ✅ undefined
 var hoistedVar = 100;
+console.log("var hoisted =", hoistedVar); // ✅ 100
 
 // console.log(hoistedLet); // ❌ ReferenceError (Temporal Dead Zone)
 // let hoistedLet = 200;
 
-
+// console.log(hoistedConst); // ❌ ReferenceError (Temporal Dead Zone)
+// const hoistedConst = 300;
 
 /*
 ========================

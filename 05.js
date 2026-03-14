@@ -18,3 +18,27 @@ console.log(typeof "Krishna");    // string
 console.log(typeof age);          // number
 console.log(typeof null);         // object (historical bug)
 console.log(typeof undefined);    // undefined
+
+
+
+/*
+JavaScript Values
+│
+├── Primitive values
+│   ├── string
+│   ├── number
+│   ├── boolean
+│   ├── null
+│   ├── undefined
+│   ├── bigint
+│   └── symbol
+│
+└── Objects
+    ├── Object
+    ├── Array
+    ├── Function
+    ├── Date
+    ├── Map
+    ├── Set
+    └── wrapper objects (String, Number, Boolean)
+*/

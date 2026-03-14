@@ -32,6 +32,11 @@ console.log(NaN == 1);     // false
 // Equality (==)
 console.log(null == 0);        // false
 console.log(null == undefined); // true
+/*
+There is one thing specially written in ECMA Script
+for loose equality 
+for null == undefined ==> true
+for null == anything else ==> false */
 
 // Relational comparison converts null → 0
 console.log(null > 0);   // false (0 > 0)
@@ -81,8 +86,21 @@ console.log(false === 0); // false
 // ------------------------------------------------------
 // 5) DANGEROUS EDGE CASES
 // ------------------------------------------------------
+console.log("====================================");
 
 console.log([] == false);    // true
+/*
+full coercion chain of above expression
+[] == false
+↓
+[] == 0
+↓
+"" == 0
+↓
+0 == 0
+↓
+true 
+*/
 console.log([] == 0);        // true
 console.log([1] == 1);       // true
 

@@ -135,6 +135,7 @@ console.log("\n---------------------------------\n");
 
 console.log('"5" + 1  =', "5" + 1);  // "51" (string concatenation)
 console.log('"5" - 1  =', "5" - 1);  // 4    (numeric coercion)
+console.log('"5a" - 1  =', "5a" - 1);  // NaN
 console.log('"5" * 2  =', "5" * 2);  // 10
 console.log('"5" / 2  =', "5" / 2);  // 2.5
 
@@ -147,7 +148,7 @@ console.log("\n---------------------------------\n");
 --------------------------------------------------------
 */
 
-console.log("NaN == NaN ->",NaN == NaN);
+console.log("NaN == NaN ->",NaN == NaN); //false
 console.log("NaN === NaN →", NaN === NaN);  // false
 console.log("null == undefined →", null == undefined);   // true
 console.log("null === undefined →", null === undefined); // false
@@ -161,7 +162,7 @@ console.log("=================================\n");
 
 
 
-// NaN == Nan //false because NaN is only value not equal to itself
+// NaN == Nan //false because NaN is only value that is not equal to itself
 
 
 
@@ -233,3 +234,118 @@ typeof D after conversion:  string
 null Hello
 */
 console.log("===============================================================================");
+// ==========================================
+// boolean -> string
+// ==========================================
+let E = false;
+let F = true;
+console.log("Value of E before conversion: ",E,"\ntypeof E before conversion: ",typeof E);
+let EConverted = String(E);
+console.log("Value of E after conversion: ",EConverted,"\ntypeof E after conversion: ",typeof EConverted);
+console.log("------------------");
+console.log("Value of F before conversion: ",F,"\ntypeof F before conversion: ",typeof F);
+let FConverted = String(F);
+console.log("Value of F after conversion: ",FConverted,"\ntypeof F after conversion: ",typeof FConverted);
+/*
+Output:
+Value of E before conversion:  false
+typeof E before conversion:  boolean
+Value of E after conversion:  false
+typeof E after conversion:  string
+------------------
+Value of F before conversion:  true
+typeof F before conversion:  boolean
+Value of F after conversion:  true
+typeof F after conversion:  string
+*/
+console.log("===============================================================================");
+console.log("===============================================================================");
+console.log("\n\nConclusion\n\n")
+console.log("===============================================================================");
+console.log("===============================================================================");
+console.log("\nUndefined -> Number ==> then it will become NaN");
+console.log("\nUndefined -> string ==> then it will be a string 'undefined' ");
+console.log("\nUndefined -> boolean ==> then it will become false");
+console.log("===============================================================================");
+console.log("\nnull -> Number ==> then it will become 0");
+console.log("\nnull -> String ==> then it will be a string 'null' ");
+console.log("\nnull -> boolean ==> then it will become false");
+console.log("===============================================================================");
+console.log("Number to String conversion is predictable");
+console.log("===============================================================================");
+console.log("\nAny number(1,32,3-2,10000) [except 0] -> boolean ==> true");
+console.log("\n0 -> boolean ==> false");
+console.log("===============================================================================");
+console.log("\n '55'/'-20'/'20' -> Number ==> normal conversion where the number will be converted ");
+console.log("\n '55ae' [String number mixture] -> Number ==> NaN ");
+console.log("\n 'krishna'[Pure String] -> Number ==> NaN ");
+console.log("===============================================================================");
+console.log("\n ''[Empty String] -> Boolean ==> false ");
+console.log("\n 'false'[Non-Empty String] ==> true ");
+console.log("===============================================================================");
+console.log("\n false -> Number ==> 0");
+console.log("\n true -> Number ==> 1");
+console.log("===============================================================================");
+console.log("\n false -> String ==> 'false'");
+console.log("\n true -> String ==> 'true'");
+/*
+Output
+===============================================================================
+===============================================================================
+
+
+Conclusion
+
+
+===============================================================================
+===============================================================================
+
+Undefined -> Number ==> then it will become NaN
+
+Undefined -> string ==> then it will be a string 'undefined'
+
+Undefined -> boolean ==> then it will become false
+===============================================================================
+
+null -> Number ==> then it will become 0
+
+null -> String ==> then it will be a string 'null'
+
+null -> boolean ==> then it will become false
+===============================================================================
+Number to String conversion is predictable
+===============================================================================
+
+Any number(1,32,3-2,10000) [except 0] -> boolean ==> true
+
+0 -> boolean ==> false
+===============================================================================
+
+ '55'/'-20'/'20' -> Number ==> normal conversion where the number will be converted
+
+ '55ae' [String number mixture] -> Number ==> NaN
+
+ 'krishna'[Pure String] -> Number ==> NaN
+===============================================================================
+
+ ''[Empty String] -> Boolean ==> false
+
+ 'false'[Non-Empty String] ==> true
+===============================================================================
+
+ false -> Number ==> 0
+
+ true -> Number ==> 1
+===============================================================================
+
+ false -> String ==> 'false'
+
+ true -> String ==> 'true'
+*/
+
+console.log("=====================================");
+console.log("Only 7 values are falsy in js \n  0 ,-0, 0n, '', null, undefined, NaN")
+
+
+
+// Refer to -> https://chatgpt.com/share/69b4f7ed-f994-8006-adfb-c7be1e307bbc

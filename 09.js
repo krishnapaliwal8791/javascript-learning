@@ -64,7 +64,7 @@ let myObj = {
     age: 20
 };
 
-console.log(myObj);
+console.log("myObj =>\n",myObj);
 console.log(typeof myObj);  // object
 
 

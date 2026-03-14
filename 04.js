@@ -1,7 +1,7 @@
 const accountId = 122345
 let accountEmail = "krishna@google.com"
 var accountPassword = "123456"
-accountCity = "Ujjain"
+accountCity = "Ujjain" // If a variable is assigned without let, const, or var, JavaScript creates an implicit global variable in non-strict mode. In strict mode, this causes a ReferenceError. 
 let accountState;
 
 // accountId = 232732 //Not allowed
