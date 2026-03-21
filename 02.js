@@ -17,6 +17,7 @@ console.log("const k =", k);
 const obj = { x: 1 };
 obj.x = 2;            // ✅ allowed (mutating contents)
 console.log("obj.x =", obj.x);
+console.log(obj);
 
 // obj = {};          // ❌ TypeError (cannot reassign const binding)
 
