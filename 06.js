@@ -39,6 +39,8 @@ console.log("Type after conversion:", typeof valueInNumber2); // number
 console.log("typeof NaN:", typeof NaN); //Output = number
 console.log("\n---------------------------------\n");
 
+console.log("Number('') -> ",Number("")) // 0
+console.log("Number(' ') -> ",Number(" ")) // 0
 
 /*
 --------------------------------------------------------
@@ -155,6 +157,44 @@ console.log("null === undefined →", null === undefined); // false
 console.log("Boolean([]) →", Boolean([]));   // true
 console.log("Boolean({}) →", Boolean({}));   // true
 
+/*
+--------------------------------------------------------
+9️⃣ LEFT-TO-RIGHT COERCION (VERY IMPORTANT)
+--------------------------------------------------------
+*/
+
+console.log('"5" + 1 + 2  =', "5" + 1 + 2); // "512"
+console.log('1 + 2 + "5"  =', 1 + 2 + "5"); // "35"
+
+/*
+Explanation:
+
+Case 1:
+"5" + 1 + 2
+Step 1: "5" + 1 → "51"   (string + number → string)
+Step 2: "51" + 2 → "512"
+
+Case 2:
+1 + 2 + "5"
+Step 1: 1 + 2 → 3        (number + number → number)
+Step 2: 3 + "5" → "35"
+
+
+Key Rule:
+→ JavaScript evaluates expressions LEFT to RIGHT
+→ At each step:
+   If either operand is a string, + performs string concatenation
+   Otherwise, + performs numeric addition
+
+Important:
+→ Parentheses can change evaluation order
+*/
+
+console.log('"5" + (1 + 2) =', "5" + (1 + 2)); // "53"
+console.log('1 + "2" + 3 =', 1 + "2" + 3); // "123"
+
+console.log("\n---------------------------------\n");
+
 console.log("\n=================================\n");
 console.log("        END OF REVISION FILE     ");
 console.log("=================================\n");
@@ -187,7 +227,7 @@ console.log("===================================================================
 // null -> boolean
 // ==========================================
 let B = null; 
-console.log("Value of B before conversion: ",B,"\ntypeof B before conversion: ",typeof B);
+console.log("Value of B before conversion: ",B,"\ntypeof B before conversion: ",typeof B); // typeof null returns "object" (this is a historical bug in JavaScript)
 let boolB = Boolean(B);
 console.log("Value of B after conversion: ",boolB,"\ntypeof B after conversion: ",typeof boolB);
 /*
@@ -349,3 +389,171 @@ console.log("Only 7 values are falsy in js \n  0 ,-0, 0n, '', null, undefined, N
 
 
 // Refer to -> https://chatgpt.com/share/69b4f7ed-f994-8006-adfb-c7be1e307bbc
+
+
+
+/*
+Final Output 
+Original value: 33
+Type before conversion: string
+After conversion: 33
+Type after conversion: number
+
+---------------------------------
+
+Original value: 33auie
+Type before conversion: string
+After conversion: NaN
+Type after conversion: number
+typeof NaN: number
+
+---------------------------------
+
+Number('') ->  0
+Number(' ') ->  0
+Original value: null
+Type before conversion: object
+After conversion: 0
+Type after conversion: number
+
+---------------------------------
+
+Original value: undefined
+Type before conversion: undefined
+After conversion: NaN
+Type after conversion: number
+
+---------------------------------
+
+true → 1
+false → 0
+
+---------------------------------
+
+1 → true
+22 → true
+-22 → true
+0 → false
+NaN → false
+
+---------------------------------
+
+"" → false
+"Krishna" → true
+"false" → true
+
+---------------------------------
+
+"5" + 1  = 51
+"5" - 1  = 4
+"5a" - 1  = NaN
+"5" * 2  = 10
+"5" / 2  = 2.5
+
+---------------------------------
+
+NaN == NaN -> false
+NaN === NaN → false
+null == undefined → true
+null === undefined → false
+Boolean([]) → true
+Boolean({}) → true
+"5" + 1 + 2  = 512
+1 + 2 + "5"  = 35
+"5" + (1 + 2) = 53
+1 + "2" + 3 = 123
+
+---------------------------------
+
+
+=================================
+
+        END OF REVISION FILE
+=================================
+
+Value of A before conversion:  undefined
+typeof A before conversion:  undefined
+Value of A after conversion:  false
+typeof A after conversion:  boolean
+===============================================================================
+Value of B before conversion:  null
+typeof B before conversion:  object
+Value of B after conversion:  false
+typeof B after conversion:  boolean
+===============================================================================
+Value of C before conversion:  undefined
+typeof C before conversion:  undefined
+Value of C after conversion:  undefined
+typeof C after conversion:  string
+undefined Hello
+===============================================================================
+Value of D before conversion:  null
+typeof D before conversion:  object
+Value of D after conversion:  null
+typeof D after conversion:  string
+null Hello
+===============================================================================
+Value of E before conversion:  false
+typeof E before conversion:  boolean
+Value of E after conversion:  false
+typeof E after conversion:  string
+------------------
+Value of F before conversion:  true
+typeof F before conversion:  boolean
+Value of F after conversion:  true
+typeof F after conversion:  string
+===============================================================================
+===============================================================================
+
+
+Conclusion
+
+
+===============================================================================
+===============================================================================
+
+Undefined -> Number ==> then it will become NaN
+
+Undefined -> string ==> then it will be a string 'undefined'
+
+Undefined -> boolean ==> then it will become false
+===============================================================================
+
+null -> Number ==> then it will become 0
+
+null -> String ==> then it will be a string 'null'
+
+null -> boolean ==> then it will become false
+===============================================================================
+Number to String conversion is predictable
+===============================================================================
+
+Any number(1,32,3-2,10000) [except 0] -> boolean ==> true
+
+0 -> boolean ==> false
+===============================================================================
+
+ '55'/'-20'/'20' -> Number ==> normal conversion where the number will be converted
+
+ '55ae' [String number mixture] -> Number ==> NaN
+
+ 'krishna'[Pure String] -> Number ==> NaN
+===============================================================================
+
+ ''[Empty String] -> Boolean ==> false
+
+ 'false'[Non-Empty String] ==> true
+===============================================================================
+
+ false -> Number ==> 0
+
+ true -> Number ==> 1
+===============================================================================
+
+ false -> String ==> 'false'
+
+ true -> String ==> 'true'
+=====================================
+Only 7 values are falsy in js
+  0 ,-0, 0n, '', null, undefined, NaN
+*/
