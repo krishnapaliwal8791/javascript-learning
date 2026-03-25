@@ -11,3 +11,14 @@ Prefer not to use var due to its block and functional scope issue
 */
 
 console.table([accountId, accountEmail, accountPassword, accountState])
+/*
+Output
+┌─────────┬──────────────────────┐
+│ (index) │ Values               │
+├─────────┼──────────────────────┤
+│ 0       │ 122345               │
+│ 1       │ 'krishna@google.com' │
+│ 2       │ '123456'             │
+│ 3       │ undefined            │
+└─────────┴──────────────────────┘
+*/
