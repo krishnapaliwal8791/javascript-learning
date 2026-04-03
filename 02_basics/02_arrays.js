@@ -52,3 +52,7 @@ let arr2 = Array.of(score1, score2, score3)
 console.log(arr2);
 const of_arr = Array.of(arr2, score1, score2, score3)
 console.log(of_arr);
+arr1 = [1,2,3,4]
+arr2 = [5,6,7,8,9,10]
+let newarr = Array.of(...arr1, ...arr2, score1, score2, score3)
+console.log(newarr);
