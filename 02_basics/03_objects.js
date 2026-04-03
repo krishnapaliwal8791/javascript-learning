@@ -30,9 +30,9 @@ const mySym = Symbol('Key1')
 JsUser = {
     name: "krish", 
     age: 19,
-    // mySym : "A Value of Symbol" //It will treat mySym as string not take it as Symbol
+    // mySym : "A Value of Symbol", //It will treat mySym as string not take it as Symbol
     [mySym] : "A Value of Symbol", //Now it will be used as symbol
-    // [Symbol2] : "Symbol 2's value", This will also give the error because Symbol2 is not defined so first define the symbol before using it
+    // [Symbol2] : "Symbol 2's value", //This will also give the error because Symbol2 is not defined so first define the symbol before using it
     "full name" : "Krishna Paliwal",
     location: "ujjain",
     email: "krishna.p@mail.com",
@@ -41,6 +41,7 @@ JsUser = {
 }
 console.log(`mySym : `, mySym);
 console.log(JsUser[mySym]);
+// console.log(JsUser[Symbol2]); Cannot write since symbol is not defined. Therefore first define the symbol
 console.log(JsUser);
 
 // We can change the value of key as 
@@ -68,6 +69,6 @@ JsUser1.greeting = function(){
     console.log(`Hello ${this.name}\nYour full name is ${this["full name"]}`);
 }
 console.log(JsUser1.greeting);
-console.log(JsUser1.greeting());
+JsUser1.greeting()
 console.log(JsUser1);
 
