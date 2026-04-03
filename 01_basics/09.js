@@ -54,6 +54,10 @@ console.log(typeof heroes);   // object (IMPORTANT)
 // Arrays are technically objects in JavaScript.
 // To check if something is array:
 console.log("Checking whether heroes are array or not ->",Array.isArray(heroes))
+const heroesTwo = heroes
+console.log(`heroesTwo : `,heroesTwo,` heroes : `,heroes);
+heroesTwo[3] = "Chacha Chaudhary"
+console.log(`heroesTwo : `,heroesTwo,` heroes : `,heroes);
 
 // ==================================
 // 5️⃣ Object (Reference Type)

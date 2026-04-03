@@ -41,3 +41,9 @@ Output:
 Use case:
 console.table() is useful for debugging because it displays arrays and objects in a structured table format instead of a long unreadable log.
 */
+let obj = {
+    name: "Krishna",
+    age: 19,
+    isLoggedIn: false
+}
+console.table(obj)

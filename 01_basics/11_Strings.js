@@ -2,7 +2,7 @@
 // In js we can represent string with (') single quote as well as (") double quote there is no such diffrence
 const namef = "Krishna"
 const surname = " Paliwal"
-console.log(namef + surname + ",Welcome Sir");
+console.log(namef + surname + ",Welcome Sir"); //String Concatenation
 // The above one is old value
 // The newer version for same work is below
 console.log(`Hello my name is ${namef} and my surname is${surname}`);// Its called string Interpolation
