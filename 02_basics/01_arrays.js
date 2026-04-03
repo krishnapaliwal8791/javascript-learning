@@ -11,24 +11,24 @@ let myarr = new Array
 // Array Methods
 // 1. push()
 myarr.push(10)
-console.table(myarr)
+console.log(myarr)
 myarr.push(11)
-console.table(myarr)
+console.log(myarr)
 
 // 2. pop()
 myarr.pop()
-console.table(myarr)
+console.log(myarr)
 
 // 3. unshift()
 myarr.unshift(9)
-console.table(myarr)
+console.log(myarr)
 
 // 4. shift()
 myarr.shift()
-console.table(myarr)
+console.log(myarr)
 
 // 5. includes()
-console.log(myarr.includes(9));
+console.log(myarr.includes(9)); //
 console.log(myarr.includes(10));
 
 // 6. indexOf()
