@@ -69,3 +69,24 @@ console.log('Object.entries(tinderUser) -> ',Object.entries(tinderUser))
 // 4. hasOwnProperty() -> Determines whether an object has a property with the specified name.
 console.log(`tinderUser.hasOwnProperty("name") -> `,tinderUser.hasOwnProperty("name"));
 console.log('tinderUser.hasOwnProperty("game_name") -> ',tinderUser.hasOwnProperty("game_name"));
+
+
+// ++++++++++++ Destructuring of Object +++++++++++++++++
+
+const Mathematicscourse = {
+    courseName: "Mathematics",
+    price: 999,
+    courseInstructor: "Krishna"
+}
+// When we have to accesses the value of courseInstructor we have to -
+console.log(`Mathematicscourse.courseInstructor -> `,Mathematicscourse.courseInstructor);
+// Now this syntax is too long and destroys the code redability
+// Hence the need of destructuring the object arises 
+const {courseInstructor} = Mathematicscourse
+// Now we can use courseInstructor only to use this value
+console.log(`courseInstructor(After Destructuring) ->`,courseInstructor);
+// If we find difficult to write courseInstructor then we can also short that name by 
+const{courseInstructor: instructor} = Mathematicscourse
+// Now if we use instructor it will also point to same value
+console.log(`instructor -> `, instructor);
+console.log(`courseInstructor -> `, courseInstructor);
