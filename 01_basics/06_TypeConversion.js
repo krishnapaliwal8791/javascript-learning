@@ -253,12 +253,13 @@ console.log("\n---------------------------------\n");
 
 /*
 --------------------------------------------------------
-1️⃣4️⃣ FALSY VALUES
+1️⃣4️⃣ FALSY VALUES & TRUTHY VALUES
 --------------------------------------------------------
 */
 
 // Only 7 falsy values in JavaScript:
 console.log("Falsy values: false, 0, -0, 0n, '', null, undefined, NaN");
+console.log("Truthy values: [], {}, '0', 'false', ' ', function(){}");
 
 console.log("\n=================================\n");
 console.log("        FINAL SUMMARY            ");
