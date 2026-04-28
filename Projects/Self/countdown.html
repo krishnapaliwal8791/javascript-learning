@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Page</title>
+</head>
+
+<body>
+    <div>
+        <span id="days">0</span>
+        <span id="hours">0</span>
+        <span id="minutes">0</span>
+        <span id="seconds">0</span>
+    </div>
+    <!-- <button onclick="stopTimer()">Stop Timer</button> -->
+    <!-- <button onclick="clickedStartTimer()">Start Timer</button> -->
+    <button onclick="check()", id="checkButton"></button>
+</body>
+<script>
+    function counter(){
+        const eventDate = new Date(2026,3,16,2,0,0)
+        const now = new Date()
+        console.log(`event is on ${eventDate}`)
+        let mumDiff = eventDate.getTime() - Date.now()
+        let daysLeft = Math.floor(mumDiff / (1000 * 60 * 60 *24))
+        // console.log(`days left -> ${daysLeft}`)
+        let hoursLeft = (Math.floor(mumDiff / (1000 * 60 * 60))) - (daysLeft*24)
+        // console.log(`hours left -> ${hoursLeft}`)
+        let minutesLeft = Math.floor(mumDiff / (1000 * 60)) - (daysLeft*24*60) - (hoursLeft*60)
+        // console.log(`minutes left -> ${minutesLeft}`)
+        let secondsLeft = Math.floor(mumDiff / (1000)) - (daysLeft*24*60*60) - (hoursLeft*60*60) - (minutesLeft*60)
+        // console.log(`seconds left -> ${secondsLeft}`)
+        document.getElementById('days').innerText = daysLeft
+        document.getElementById('hours').innerText = hoursLeft
+        document.getElementById('minutes').innerText = minutesLeft
+        document.getElementById('seconds').innerText = secondsLeft
+    }
+
+    let IntervalId;
+
+    function stopTimer(){
+        clearInterval(IntervalId)
+        IntervalId = null
+        document.getElementById('days').innerText = 0
+        document.getElementById('hours').innerText = 0
+        document.getElementById('minutes').innerText = 0
+        document.getElementById('seconds').innerText = 0
+        check()
+    } 
+   
+    function clickedStartTimer(){
+        if(IntervalId){
+            return;
+        }
+        IntervalId = startTimer()
+        check()
+        
+    }
+    function startTimer(){
+        const myInterval = setInterval(counter, 1000)
+        return myInterval
+    }
+    
+    function check(){
+        if(IntervalId){
+            document.getElementById('checkButton').innerText = "Stop Timer"
+            document.getElementById('checkButton').onclick = stopTimer 
+        } else{
+            document.getElementById('checkButton').innerText = "Start Timer"
+            document.getElementById('checkButton').onclick = clickedStartTimer
+            
+        }
+    }
+    check()
+</script>
+</html>
+
