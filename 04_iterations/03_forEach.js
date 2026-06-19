@@ -30,3 +30,6 @@ console.log('----------')
 arr.forEach((item, index, array)=>{
     console.log(item, index, array)
 })
+
+
+// ForEach does not return anything even if we return explicitly in callback function 
