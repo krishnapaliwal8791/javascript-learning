@@ -15,13 +15,30 @@
             <span id="toHide">Test text</span>
         </p>
     </div>
+
+
+    <div class="learnQuerySelector" id="div1">
+      <h2 id="a">Lorem A</h2>
+      <h2 id="b">Lorem B</h2>
+      <h2 class="c">Lorem C</h2>
+      <input type="password" name="Password" id="Password">
+    </div>
+
+
+    <div class="learnQueryselectorWithList" id="ul">
+      <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+      </ul>
+    </div>
   </body>
 </html>
 
 
 <script>
     // getElementById()
-    const title = document.getElementById(`title`)
+    const title = document.getElementById(`title`) // getElementsByClassName behave like this but it returns all elements who have same class in HTML Collection. It can be converted to array using Array.from()
     console.log(title.id)
     console.log(title.className)
     console.log(title.getAttribute('style')) // same can be done for id, class
@@ -70,8 +87,42 @@
     console.log(p.innerHTML)
 
     //Reverting the condition back
-    p.innerHTML = 'Lorem ipsum dolor sit amet.<span id="toHide">Test text</span>'
+    p.innerHTML = 'Lorem ipsum dolor sit amet.\n<span id="toHide">Test text</span>'
     // 
+
+
+    console.log(p.innerHTML)
+
+
+
+
+
+
+    // / ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    const h2A = document.querySelector('h2')
+    console.log(`+++++++++++++++++++++++++++++++++++++++++++++++++++++`)
+    console.log(h2A);
+
+    const h2B = document.querySelector(`#b`)
+    console.log(h2B);
+    
+    const h2C = document.querySelector('.c')
+    console.log(h2C);
+    
+    const inputSelect = document.querySelector(`input[type='password']`)
+    console.log(inputSelect);
+
+
+
+    
+    // +++++++++++++++++++++++++++++++++++++++++++++++++
+    console.log(`UL with dom`)
+    const myul = document.querySelector(`ul`)
+    console.log(myul)
+    
+    const oneli = myul.querySelector('li')
+    console.log(oneli)
+    oneli.style.backgroundColor = 'yellow'
 </script>
 
 

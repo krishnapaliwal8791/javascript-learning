@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Document</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <div class="heading" id="title">
+        <h1 id="title">Title</h1>
+    </div>
+    <div class="content" id="para">
+        <p id="lorem">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="subheadings" id="h2s">
+        <h2 id="a">Lorem A</h2>
+        <h2 id="b">Lorem B</h2>
+        <h2 id="c">Lorem C</h2>
+    </div>
+
+    <div class="input" id="pass">
+        <input type="password" name="password" id="password">
+    </div>
+
+    <div class="ul" id="li">
+        <ul class="uls" id="lis">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<script>
+    console.log(document.querySelectorAll('li')) // we get the nodeList here
+    const tempLiList = document.querySelectorAll('li')
+    console.log('===========================')
+    tempLiList.forEach( (item) => {
+        console.log(item)
+    })
+    console.log('===========================')
+
+
+
+
+    const h2_ = document.querySelectorAll('h2')
+    h2_.forEach( (item) => {
+        item.setAttribute('style', 'background-color: white; padding: 20px; color: black; width: 100px')
+    })
+
+</script>
