@@ -1,19 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-</head>
-<body style="background-color: black; color: aliceblue;">
-    <div class="bg-black">
-        <h1 class="heading" id="title">Title</h1>
-        <p>Lorem ipsum  sit .</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normal DOM Document</title>
+  </head>
+  <body style="background-color: black; color: aliceblue;">
+    <div class="heading" id="title" style="font-size: xx-large;">
+        <h1>Title</h1>
     </div>
-</body>
+    <div class="content" id="lorem" style="font-size: large;">
+        <p id="123">
+            Lorem ipsum dolor sit amet.
+            <span id="toHide">Test text</span>
+        </p>
+    </div>
+  </body>
 </html>
+
+
 <script>
-    
+    // getElementById()
+    const title = document.getElementById(`title`)
+    console.log(title.id)
+    console.log(title.className)
+    console.log(title.getAttribute('style')) // same can be done for id, class
+    console.log(title.getAttribute('class'))
+
+    title.setAttribute('id', 'idOfTitleChanged')
+    console.log(title.getAttribute('id'))
+    title.setAttribute('style', 'background-color: blue; font-size: xx-large;') // It overwrite the attribute
+
+    title.style.backgroundColor = 'green'
+    title.style = 'background-color: blue; font-size: small;'
+    title.style.color = 'white'
+    title.style.fontSize = 'xx-large'
+
+
+
+    // ++++++++++++++++++++++++++++++++++++
+
+
+    const p = document.getElementById('123')
+    console.log(p.innerHTML)
+    console.log(p.innerText)
+    console.log(p.textContent)
+
+    console.log(`========================`)
+
+    const spanTag = document.getElementById('toHide')
+    spanTag.style.display = 'none'
+    console.log(p.innerHTML)
+    console.log(p.innerText)
+    console.log(p.textContent)
+
+
+
+    console.log('================================')
+
+    p.innerText = 'Hello Text is changed'
+    console.log(p.innerHTML)
+
+    //Reverting the condition back
+    p.innerHTML = 'Lorem ipsum dolor sit amet.<span id="toHide">Test text</span>'
+    // 
+
+
+    p.textContent = 'Hello, Text is changed again'
+    console.log(p.innerHTML)
+
+    //Reverting the condition back
+    p.innerHTML = 'Lorem ipsum dolor sit amet.<span id="toHide">Test text</span>'
+    // 
 </script>
 
 
