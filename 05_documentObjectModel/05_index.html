@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM editing or removing of an element</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <div class="language" id="programming">
+        <ul class="listOfLanguage">
+            <li id="py">python</li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    const addLanguage = (langName, id) => {
+        const toAppendLi = document.createElement('li')
+        toAppendLi.setAttribute('id', `${id}`)
+        toAppendLi.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector(".listOfLanguage").appendChild(toAppendLi)
+    }
+    
+    const editLanguage = (newLangName, newId, oldLangName, oldId) => {
+        const old = document.querySelector(`#${oldId}`)
+        if(oldLangName !== old.textContent){
+            console.log(`Either existing id or language name is incorrect `)
+            return
+        }
+        const newLi = document.createElement(`li`)
+        newLi.setAttribute('id', `${newId}`)
+        newLi.appendChild(document.createTextNode(`${newLangName}`))
+        old.replaceWith(newLi)
+    }
+
+    const removeLanguage = (langName, id) => {
+        const toRemove = document.querySelector(`#${id}`)
+        if(toRemove.textContent !== `${langName}`){
+            console.log(`Either existing id or language name is incorrect \n Cannot remove Language`)
+            return
+        }
+        toRemove.remove()
+    }
+    addLanguage('C++', 'cpp')
+    addLanguage('GoLang', 'go')
+    editLanguage('JavaScript', 'js', 'python', 'py')
+    removeLanguage('GoLang', 'go')
+
+
+   
+</script>
+</html>

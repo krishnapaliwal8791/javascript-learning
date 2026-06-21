@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Add new element</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <div class="week">
+        <div class="day" id="m">Monday</div>
+        <div class="day" id="t">Tuesday</div>
+        <div class="day" id="w">Wednesday</div>
+        <div class="day" id="th">Thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector('.week')
+    console.log(parent)
+    console.log(parent.children) // We will get an html collection of all childrens
+
+    for (let index = 0; index < parent.children.length; index++) {
+        parent.children[index].setAttribute('style', 'background-color : green; padding : 5px; border-radius: 15px')
+    }
+
+
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+
+    console.log(document.querySelector('#t').parentElement)
+    console.log(document.querySelector('#t').nextElementSibling)
+    console.log(document.querySelector('#t').previousElementSibling)
+    
+
+    console.log(`=================================================`)
+
+    console.log(parent.childNodes)
+</script>
+</html>
+
+
+<!-- 
+parent.children
+parent.firstElementChild
+parent.lastElementChild
+document.querySelector('.day').parentElement
+document.querySelector('.day').nextElementSibling
+parent.childNodes
+======================================================
+
+document.body.appendChild(document.createElement('div').appendChild(`document.createTextNode('Krishna')`)
+)
+-->
+
+<!--
+for a ul design a function for appending new language 
+replaceWith()   
+outerHTML
+.remove()`
+-->
