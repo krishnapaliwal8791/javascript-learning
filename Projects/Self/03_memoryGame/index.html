@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <header>
+        <hgroup id="K22">
+            <h1>Memory Game of Colours</h1>
+            <p>~ Krishna</p>
+        </hgroup>
+        <nav>
+            <ul>
+                <li><strong>Memory Game</strong></li>
+            </ul>
+            <ul>
+                <li><a href="https://www.figma.com/design/Qd8xv6LP6NvxKgvvkDanQo/Untitled?node-id=0-1&t=cTqncYPhI6rZkdEg-1" target="_blank" data-tooltip="Figma Prototype of memory game">Figma</a></li>
+                <li><a href="github.com/krishnapaliwal8791" target="_blank">Github</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="rules">
+            <h2 id="ruleHeader"><u>Rules</u></h2>
+            <ul>
+                <li>Game will start initially with 2 colours.</li>
+                <li>In level 1 you will see 4 nodes of that colour. You have 5 seconds to memorize it. After 5 seconds the nodes will be hidden and you have to replicate the pattern.</li>
+                <li>After each level the node increases by 1 (upto level 7)</li>
+                <li>From level 8 colour starts to increase but the nodes remain same.</li>
+                <li>You can play the game upto level 50.</li>
+            </ul>
+        </div>
+        <div id="startGame">
+            <button id="startGameBtn" data-theme="dark">Start Game</button>
+        </div>
+    </main>
+    <footer>
+        <blockquote>
+            <p>An Open Source Project Everybody can use it.</p>
+        </blockquote>
+    </footer>
+</body>
+<script src="./assets/script.js" type="module"></script>
+
+</html>
