@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.blue.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+<body>
+    <header>
+        <hgroup class="header">
+            <h1>BMI-Calculator</h1>
+            <p>~Krishna</p>
+        </hgroup>
+    </header>
+    <main>
+        <div class="formdiv">
+            <form action="#" class="form">
+                <label for="height">Height (in m)</label>
+                <input type="number" name="height" id="height">
+                <label for="weight">Weight (in kg)</label>
+                <input type="number" name="weight" id="weight">
+                <input type="submit" value="Calculate" id="submit">
+            </form>
+        </div>
+        <div class="results"></div>
+        <div>
+            <table>
+                <caption><u>BMI Guide</u></caption>
+                <thead>
+                    <th scope="col">Classification</th>
+                    <th scope="col">BMI</th>
+                    <th scope="col">BMI Prime</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Severe Thinness</th>
+                        <td>&lt; 16</td>
+                        <td>&lt; 0.64</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Moderate Thinness</th>
+                        <td>16 - 17</td>
+                        <td>0.64 - 0.68</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Mild Thinness</th>
+                        <td>17 - 18.5</td>
+                        <td>0.68 - 0.74</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Normal</th>
+                        <td>18.5 - 25</td>
+                        <td>0.74 - 1</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Overweight</th>
+                        <td>25 - 30</td>
+                        <td>1 - 1.2</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Obese Class I</th>
+                        <td>30 - 35</td>
+                        <td>1.2 - 1.4</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Obese Class II</th>
+                        <td>35 - 40</td>
+                        <td>1.4 - 1.6</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Obese Class II</th>
+                        <td>&gt; 40</td>
+                        <td>&gt; 1.6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+<script src="./script.js"></script>
+</html>

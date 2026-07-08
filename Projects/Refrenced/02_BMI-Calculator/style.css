@@ -1,0 +1,23 @@
+.header{
+    text-align: center;
+    justify-content: center;
+}
+.formdiv{
+    max-width: fit-content;
+    margin: auto;
+}
+caption{
+    font-size: 40px;
+}
+.results{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    border: solid 2px;
+    border-radius: 5px;
+    padding: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
